@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	is_running = Input.is_action_pressed("run") and HealthController.food_bar >= HealthController.full_bar/2
+	is_running = Input.is_action_pressed("run") and HealthController.food_bar >= 10
 	
 	var current_speed = speed
 	if is_running: current_speed = run_speed
@@ -36,8 +36,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
-	if input_dir == Vector2.ZERO:
-		HealthController.use_food_to_run()
+	if input_dir != Vector2.ZERO:
+		if is_running:
+			HealthController.use_food_to_run(delta)
+		else:
+			HealthController.use_food_to_walk(delta)
 	
 	move_and_slide()
 

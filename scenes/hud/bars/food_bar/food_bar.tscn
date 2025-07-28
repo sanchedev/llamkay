@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy28q66o7x7vq"]
+
+[ext_resource type="Texture2D" uid="uid://43xhvga2s2hk" path="res://assets/hud/bars/food_bar/under.png" id="1_v36lv"]
+[ext_resource type="Texture2D" uid="uid://p1quav8lcfvg" path="res://assets/hud/bars/food_bar/over.png" id="2_injac"]
+[ext_resource type="Texture2D" uid="uid://cmau2a3oarvh1" path="res://assets/hud/bars/food_bar/progress.png" id="3_va7u7"]
+[ext_resource type="Script" uid="uid://c76np1ak16lld" path="res://scenes/hud/bars/food_bar/food_bar.gd" id="4_injac"]
+
+[node name="FoodProgressBar" type="TextureProgressBar"]
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("1_v36lv")
+texture_over = ExtResource("2_injac")
+texture_progress = ExtResource("3_va7u7")
+script = ExtResource("4_injac")

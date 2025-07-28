@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://djt4re4nsuk43"]
+[gd_scene load_steps=10 format=3 uid="uid://djt4re4nsuk43"]
 
+[ext_resource type="PackedScene" uid="uid://bng6ikfucyp27" path="res://scenes/hud/main_hud.tscn" id="1_a8kv3"]
 [ext_resource type="PackedScene" uid="uid://c6xjbi3uh4k5q" path="res://scenes/player/player.tscn" id="1_cnhhr"]
+[ext_resource type="PackedScene" uid="uid://bekehixaqa4l4" path="res://assets/decoration/rocks/rock_1/rock_1.glb" id="2_jpbku"]
+[ext_resource type="Script" uid="uid://dus3k2856uydc" path="res://scripts/controllers/pause_controller.gd" id="4_pi2b7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jpbku"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -21,6 +24,8 @@ size = Vector2(20, 20)
 size = Vector3(20, 0.5, 20)
 
 [node name="Test" type="Node3D"]
+
+[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -43,3 +48,10 @@ shape = SubResource("BoxShape3D_uc0mn")
 
 [node name="Player" parent="." instance=ExtResource("1_cnhhr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_jpbku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46537, 0.0625, 0.409026)
+
+[node name="PauseController" type="Node3D" parent="."]
+script = ExtResource("4_pi2b7")
+metadata/_custom_type_script = "uid://dus3k2856uydc"
