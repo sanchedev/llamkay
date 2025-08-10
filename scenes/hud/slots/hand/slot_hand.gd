@@ -1,7 +1,5 @@
 class_name SlotHand extends TextureButton
 
-var item = null : set = _set_item
-
 const NO_ITEM = preload("res://assets/hud/items/no_item.png")
 
 @onready var texture_rect: TextureRect = $TextureRect
@@ -9,16 +7,6 @@ const NO_ITEM = preload("res://assets/hud/items/no_item.png")
 @onready var item_count: PanelContainer = $ItemCount
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-
-func _set_item(value):
-	if value == null:
-		$PanelContainer/Label.text = ""
-		$TextureRect.texture = NO_ITEM
-		$PanelContainer.hide()
-	else:
-		$PanelContainer/Label.text = value.name
-		$TextureRect.texture = value.texture
-		$PanelContainer.show()
 
 func _ready() -> void:
 	InventoryManager.instance.slot_changed.connect(_on_slot_changed)
