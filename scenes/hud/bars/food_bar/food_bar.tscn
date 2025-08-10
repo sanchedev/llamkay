@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy28q66o7x7vq"]
+
+[ext_resource type="Texture2D" uid="uid://43xhvga2s2hk" path="res://assets/hud/bars/food_bar/under.png" id="1_v36lv"]
+[ext_resource type="Texture2D" uid="uid://d3dcje80ethm2" path="res://assets/hud/bars/food_bar/bg.png" id="2_va7u7"]
+[ext_resource type="Texture2D" uid="uid://cmau2a3oarvh1" path="res://assets/hud/bars/food_bar/progress.png" id="3_va7u7"]
+[ext_resource type="Script" uid="uid://c76np1ak16lld" path="res://scenes/hud/bars/food_bar/food_bar.gd" id="4_injac"]
+[ext_resource type="FontFile" uid="uid://cv5k81p1vm4ds" path="res://assets/fonts/Roboto.woff2" id="5_xk64g"]
+
+[sub_resource type="FontVariation" id="FontVariation_gwhio"]
+base_font = ExtResource("5_xk64g")
+variation_opentype = {
+2003072104: 100,
+2003265652: 600
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl1nd"]
+font = SubResource("FontVariation_gwhio")
+font_size = 32
+
+[node name="FoodProgressBar" type="TextureRect"]
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("2_va7u7")
+script = ExtResource("4_injac")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 312.0
+offset_bottom = 64.0
+value = 50.0
+texture_under = ExtResource("1_v36lv")
+texture_progress = ExtResource("3_va7u7")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+label_settings = SubResource("LabelSettings_xl1nd")
+horizontal_alignment = 1
+vertical_alignment = 1

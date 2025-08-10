@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnbjwx54s1fxq"]
+
+[ext_resource type="PackedScene" uid="uid://bekehixaqa4l4" path="res://assets/models/items/rock/rock_1.glb" id="1_4ssbg"]
+[ext_resource type="Script" uid="uid://ci7n66xc5jk0a" path="res://scripts/items/in_hand.gd" id="1_uan6x"]
+
+[node name="RockInHand" type="Node3D"]
+script = ExtResource("1_uan6x")
+item = 1
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_4ssbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+
+[editable path="blockbench_export"]

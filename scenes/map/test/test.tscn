@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://djt4re4nsuk43"]
+
+[ext_resource type="PackedScene" uid="uid://bng6ikfucyp27" path="res://scenes/hud/main_hud.tscn" id="1_a8kv3"]
+[ext_resource type="PackedScene" uid="uid://c6xjbi3uh4k5q" path="res://scenes/player/player.tscn" id="1_cnhhr"]
+[ext_resource type="Script" uid="uid://hhgecqgcmfs2" path="res://scripts/inventory/inventory_manager.gd" id="1_uc0mn"]
+[ext_resource type="Resource" uid="uid://bgbcymomk4gxk" path="res://scripts/inventory/inventory_res.tres" id="2_cwhb2"]
+[ext_resource type="PackedScene" uid="uid://dnowhmkkb0jks" path="res://assets/models/decorations/mountains/mountains.glb" id="4_fscad"]
+[ext_resource type="Script" uid="uid://dus3k2856uydc" path="res://scripts/controllers/pause_controller.gd" id="4_pi2b7"]
+[ext_resource type="PackedScene" uid="uid://c1b1eniuvpjvf" path="res://scenes/items/rock/rock_pickable.tscn" id="5_fscad"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jpbku"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_a8kv3"]
+sky_material = SubResource("ProceduralSkyMaterial_jpbku")
+
+[sub_resource type="Environment" id="Environment_pi2b7"]
+background_mode = 2
+sky = SubResource("Sky_a8kv3")
+tonemap_mode = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uc0mn"]
+size = Vector2(500, 350)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pi2b7"]
+data = PackedVector3Array(250, 0, 175, -250, 0, 175, 250, 0, -175, -250, 0, 175, -250, 0, -175, 250, 0, -175)
+
+[node name="Test" type="Node3D" groups=["world"]]
+
+[node name="InventoryManager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_uc0mn")
+inventory_res = ExtResource("2_cwhb2")
+
+[node name="PauseController" type="Node3D" parent="."]
+process_mode = 3
+script = ExtResource("4_pi2b7")
+metadata/_custom_type_script = "uid://dus3k2856uydc"
+
+[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pi2b7")
+
+[node name="Player" parent="." instance=ExtResource("1_cnhhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.328, 8.28149, -4.23337)
+
+[node name="mountains" parent="." instance=ExtResource("4_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.59784, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7658, 0, 0, 0, 1, 0, 0, 0, 1.28525, 130.056, 0, 0)
+mesh = SubResource("PlaneMesh_uc0mn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pi2b7")
+
+[node name="Rock" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7261, 4.72571, -17.8529)
+
+[node name="Rock2" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7261, 4.72571, -6.67444)
+
+[node name="Rock3" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7261, 4.72571, -24.1559)
+
+[node name="Rock4" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.703, 4.72571, -24.1559)
+
+[node name="Rock5" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.703, 4.72571, -11.2475)

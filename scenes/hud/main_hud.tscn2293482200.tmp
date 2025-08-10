@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bng6ikfucyp27"]
+
+[ext_resource type="PackedScene" uid="uid://b4vq0cl3o0746" path="res://scenes/hud/bars/health_bar/health_bar.tscn" id="3_a535s"]
+[ext_resource type="PackedScene" uid="uid://dy28q66o7x7vq" path="res://scenes/hud/bars/food_bar/food_bar.tscn" id="4_v04dn"]
+[ext_resource type="PackedScene" uid="uid://ct84e6fyue8f5" path="res://scenes/hud/buttons/pause/pause_button.tscn" id="5_5pyus"]
+
+[node name="MainHud" type="CanvasLayer"]
+
+[node name="FoodProgressBar" parent="." instance=ExtResource("4_v04dn")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -96.0
+offset_right = 384.0
+offset_bottom = -32.0
+grow_vertical = 0
+
+[node name="PauseButton" parent="." instance=ExtResource("5_5pyus")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 72.0
+grow_horizontal = 0
+
+[node name="HealthProgressBar" parent="." instance=ExtResource("3_a535s")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -176.0
+offset_right = 352.0
+offset_bottom = -112.0
+grow_vertical = 0

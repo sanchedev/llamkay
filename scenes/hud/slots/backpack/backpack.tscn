@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://be4ine6g6r3nv"]
+
+[ext_resource type="Texture2D" uid="uid://578gq0xloqfo" path="res://assets/hud/slots/backpack/backpack.png" id="1_ur885"]
+[ext_resource type="PackedScene" uid="uid://coa16ca4qtpoc" path="res://scenes/hud/key/key.tscn" id="2_gnibj"]
+
+[node name="Backpack" type="TextureButton"]
+texture_normal = ExtResource("1_ur885")
+
+[node name="Key" parent="." instance=ExtResource("2_gnibj")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+label = "I"

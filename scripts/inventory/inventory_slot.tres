@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InventorySlotRes" load_steps=2 format=3 uid="uid://br3djqehvytxg"]
+
+[ext_resource type="Script" uid="uid://catij8oes6mbq" path="res://scripts/inventory/inventory_slot.gd" id="1_3ja1i"]
+
+[resource]
+script = ExtResource("1_3ja1i")
+item = 0
+count = 0

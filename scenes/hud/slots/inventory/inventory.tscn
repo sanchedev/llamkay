@@ -1,0 +1,352 @@
+[gd_scene load_steps=13 format=3 uid="uid://dy3hryu12ha2y"]
+
+[ext_resource type="PackedScene" uid="uid://buh3jt86uohy" path="res://scenes/hud/slots/inventory/inventory_slot.tscn" id="1_noof5"]
+[ext_resource type="Script" uid="uid://5kam1nn3in8l" path="res://scenes/hud/slots/inventory/inventory.gd" id="1_pdda2"]
+[ext_resource type="Texture2D" uid="uid://pxl12ftos16w" path="res://assets/hud/buttons/close/normal.png" id="2_ue8w2"]
+[ext_resource type="Texture2D" uid="uid://beig2xvf5k3vj" path="res://assets/hud/buttons/close/hover.png" id="3_pdda2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsy01"]
+bg_color = Color(0.972549, 0.94902, 0.803922, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.941176, 0.890196, 0.592157, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="FontVariation" id="FontVariation_noof5"]
+variation_opentype = {
+2003072104: 100,
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6m3pk"]
+font = SubResource("FontVariation_noof5")
+font_size = 64
+font_color = Color(0.243137, 0.121569, 0.0392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_noof5"]
+bg_color = Color(0.913725, 0.819608, 0.376471, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="Animation" id="Animation_pdda2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1392, -864)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, -846), Vector2(500, -846)]
+}
+
+[sub_resource type="Animation" id="Animation_o745x"]
+resource_name = "fade_in"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.501961)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, -846), Vector2(500, 234)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloseButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1392, -864), Vector2(1392, 220)]
+}
+
+[sub_resource type="Animation" id="Animation_qog44"]
+resource_name = "fade_out"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.501961), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseButton:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1392, -864), Vector2(1392, -832)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 234), Vector2(500, -846)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxtuu"]
+_data = {
+&"RESET": SubResource("Animation_pdda2"),
+&"fade_in": SubResource("Animation_o745x"),
+&"fade_out": SubResource("Animation_qog44")
+}
+
+[node name="Inventory" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pdda2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -1386.0
+offset_right = 460.0
+offset_bottom = -774.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vsy01")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inventario"
+label_settings = SubResource("LabelSettings_6m3pk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_noof5")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 8
+
+[node name="InventorySlot" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("1_noof5")]
+layout_mode = 2
+am_i_main_hand = true
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 432.0
+offset_top = -1404.0
+offset_right = 480.0
+offset_bottom = -1356.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ue8w2")
+texture_hover = ExtResource("3_pdda2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xxtuu")
+}
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

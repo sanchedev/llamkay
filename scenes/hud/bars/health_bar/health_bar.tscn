@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4vq0cl3o0746"]
+
+[ext_resource type="Texture2D" uid="uid://cv04n77uvexh6" path="res://assets/hud/bars/health_bar/bg.png" id="1_hvs31"]
+[ext_resource type="Script" uid="uid://dg47hqdwhiy1s" path="res://scenes/hud/bars/health_bar/health_bar.gd" id="2_hvs31"]
+[ext_resource type="Texture2D" uid="uid://b31yhispm8302" path="res://assets/hud/bars/health_bar/under.png" id="3_sfsy3"]
+[ext_resource type="Texture2D" uid="uid://ble1w2fkb331l" path="res://assets/hud/bars/health_bar/progress.png" id="4_0flnl"]
+[ext_resource type="FontFile" uid="uid://cv5k81p1vm4ds" path="res://assets/fonts/Roboto.woff2" id="5_668uy"]
+
+[sub_resource type="FontVariation" id="FontVariation_gwhio"]
+base_font = ExtResource("5_668uy")
+variation_opentype = {
+2003072104: 100,
+2003265652: 600
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl1nd"]
+font = SubResource("FontVariation_gwhio")
+font_size = 32
+
+[node name="HealthProgressBar" type="TextureRect"]
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("1_hvs31")
+script = ExtResource("2_hvs31")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 312.0
+offset_bottom = 64.0
+value = 50.0
+texture_under = ExtResource("3_sfsy3")
+texture_progress = ExtResource("4_0flnl")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+label_settings = SubResource("LabelSettings_xl1nd")
+horizontal_alignment = 1
+vertical_alignment = 1

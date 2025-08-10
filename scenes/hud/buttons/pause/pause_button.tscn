@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct84e6fyue8f5"]
+
+[ext_resource type="Texture2D" uid="uid://cd4wl56iogai7" path="res://assets/hud/buttons/pause/normal.png" id="1_cydl8"]
+[ext_resource type="Script" uid="uid://c4nu4qfj1k4xi" path="res://scenes/hud/buttons/pause/pause_button.gd" id="3_gn7yl"]
+
+[node name="PauseButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_cydl8")
+stretch_mode = 4
+script = ExtResource("3_gn7yl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
