@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpa3q3lh6pnxx"]
+
+[ext_resource type="Script" uid="uid://ci7n66xc5jk0a" path="res://scripts/items/in_hand.gd" id="1_ldojn"]
+[ext_resource type="PackedScene" uid="uid://k2drsxoahqmo" path="res://assets/models/items/corn/corn.glb" id="2_aalrp"]
+
+[node name="CornInHand" type="Node3D"]
+script = ExtResource("1_ldojn")
+item = 2
+metadata/_custom_type_script = "uid://ci7n66xc5jk0a"
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_aalrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.1)

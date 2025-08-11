@@ -51,18 +51,26 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if ray_cast_3d.is_colliding():
-		var collider: Pickable = ray_cast_3d.get_collider()
+		var collider: Node3D = ray_cast_3d.get_collider()
+		
+		if collider == null: return
+		
+		if not (collider is Pickable):
+			interact_object.emit(collider)
+			return
+		
+		var pickable_item: Pickable = collider
 		var item_slot = get_hand_item()
 		if item_slot.item != Items.ITEMS_LIST.NONE:
 			if item_slot.count >= Items.get_item(item_slot.item).max_count: return
-			if collider.item != item_slot.item: return
+			if pickable_item.item != item_slot.item: return
 		
-		interact_object.emit(collider)
+		interact_object.emit(pickable_item)
 		
 		if Input.is_action_just_pressed("pick"):
-			var count = item_slot.count+1 if collider.item == get_hand_item().item else 1
-			set_hand_item(collider.item, count)
-			collider.queue_free()
+			var count = item_slot.count+1 if pickable_item.item == get_hand_item().item else 1
+			set_hand_item(pickable_item.item, count)
+			pickable_item.queue_free()
 	else:
 		interact_object.emit(null)
 

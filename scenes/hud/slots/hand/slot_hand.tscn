@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2fpt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf1f5"]
-bg_color = Color(0.941176, 0.890196, 0.592157, 1)
+bg_color = Color(0.941176, 0.890196, 0.592157, 0.552941)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -45,6 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_p2fpt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hf1f5")
+value = 18.93
 fill_mode = 3
 show_percentage = false
 
@@ -65,17 +66,21 @@ texture = ExtResource("3_p2fpt")
 
 [node name="ItemName" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 2
-offset_left = 63.0
-offset_top = -33.0
-offset_right = 64.0
-offset_bottom = -14.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_top = -48.0
+offset_right = 0.5
+offset_bottom = -12.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pkbbb")
 
 [node name="Label" type="Label" parent="ItemName"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.243137, 0.121569, 0.0392157, 1)
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -98,5 +103,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pkbbb")
 [node name="Label" type="Label" parent="ItemCount"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.243137, 0.121569, 0.0392157, 1)
+theme_override_font_sizes/font_size = 24
+text = "x13"
 horizontal_alignment = 1
 vertical_alignment = 1

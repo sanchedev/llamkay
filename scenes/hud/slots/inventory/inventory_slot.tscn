@@ -17,15 +17,15 @@ variation_opentype = {
 2003265652: 700
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usneo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td14w"]
 bg_color = Color(0.972549, 0.94902, 0.803922, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 8.0
 expand_margin_top = 4.0
-expand_margin_right = 4.0
+expand_margin_right = 8.0
 expand_margin_bottom = 4.0
 
 [node name="InventorySlot" type="PanelContainer"]
@@ -41,16 +41,16 @@ script = ExtResource("3_td14w")
 
 [node name="Label" type="Label" parent="TextureDragSlot"]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -34.0
-offset_top = -27.0
-offset_right = -8.0
+offset_left = -13.0
+offset_top = -37.0
+offset_right = -12.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -58,7 +58,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.243137, 0.121569, 0.0392157, 1)
 theme_override_fonts/font = SubResource("FontVariation_td14w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_usneo")
-text = "x10"
-horizontal_alignment = 2
-vertical_alignment = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_td14w")
+horizontal_alignment = 1
+vertical_alignment = 1

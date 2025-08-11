@@ -1,13 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4vq0cl3o0746"]
+[gd_scene load_steps=7 format=3 uid="uid://b4vq0cl3o0746"]
 
 [ext_resource type="Texture2D" uid="uid://cv04n77uvexh6" path="res://assets/hud/bars/health_bar/bg.png" id="1_hvs31"]
 [ext_resource type="Script" uid="uid://dg47hqdwhiy1s" path="res://scenes/hud/bars/health_bar/health_bar.gd" id="2_hvs31"]
 [ext_resource type="Texture2D" uid="uid://b31yhispm8302" path="res://assets/hud/bars/health_bar/under.png" id="3_sfsy3"]
 [ext_resource type="Texture2D" uid="uid://ble1w2fkb331l" path="res://assets/hud/bars/health_bar/progress.png" id="4_0flnl"]
-[ext_resource type="FontFile" uid="uid://cv5k81p1vm4ds" path="res://assets/fonts/Roboto.woff2" id="5_668uy"]
 
 [sub_resource type="FontVariation" id="FontVariation_gwhio"]
-base_font = ExtResource("5_668uy")
 variation_opentype = {
 2003072104: 100,
 2003265652: 600

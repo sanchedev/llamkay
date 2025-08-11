@@ -27,5 +27,5 @@ func _on_slot_changed(idx: int, slot: InventorySlotRes, old_item: Items.ITEMS_LI
 		item_count.show()
 		progress_bar.show()
 		item_name.get_child(0).text = item_obj.item_name
-		item_count.get_child(0).text = "x"+str(slot.count)
+		item_count.get_child(0).text = str(slot.count)
 		progress_bar.value = slot.count*100/item_obj.max_count

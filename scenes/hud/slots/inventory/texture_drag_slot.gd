@@ -10,14 +10,14 @@ func _get_drag_data(at_position: Vector2) -> int:
 	
 	var preview: Control = Control.new()
 	preview.add_child(preview_texture)
-	preview.z_index = 2
+	preview.z_index = 5
 	
 	set_drag_preview(preview)
 	
 	return index
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return data is int and data < InventoryManager.instance.all_items.size() and data >= 0
+	return data != index and data is int and data < InventoryManager.instance.all_items.size() and data >= 0
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if not (data is int) and data >= InventoryManager.instance.all_items.size() or data < 0: return

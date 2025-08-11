@@ -3,6 +3,7 @@ class_name Items
 enum ITEMS_LIST {
 	NONE,
 	ROCK,
+	CORN,
 }
 
 static var _items: Dictionary = {
@@ -18,6 +19,13 @@ static var _items: Dictionary = {
 		preload("res://assets/hud/items/rock.png"),
 		preload("res://scenes/items/rock/rock_pickable.tscn"),
 		preload("res://scenes/items/rock/rock_in_hand.tscn"),
+		8
+	),
+	ITEMS_LIST.CORN: Item.new(
+		"Maiz",
+		preload("res://assets/hud/items/corn.png"),
+		preload("res://scenes/items/corn/corn_pickable.tscn"),
+		preload("res://scenes/items/corn/corn_in_hand.tscn"),
 		8
 	),
 }

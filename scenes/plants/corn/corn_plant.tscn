@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0jk8x0uqke7y"]
+
+[ext_resource type="Script" uid="uid://wgncbud4ng3e" path="res://scripts/plants/plant.gd" id="1_gscfp"]
+[ext_resource type="PackedScene" uid="uid://3nt7guu52n1a" path="res://scenes/plants/corn/phase_3.tscn" id="3_qv06h"]
+
+[node name="CornPlant" type="Node3D"]
+script = ExtResource("1_gscfp")
+phases_durantion_in_sec = Array[int]([60])
+
+[node name="Phase3" parent="." node_paths=PackedStringArray("complete_plant") instance=ExtResource("3_qv06h")]
+complete_plant = NodePath("..")

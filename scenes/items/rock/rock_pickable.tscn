@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://c1b1eniuvpjvf"]
+[gd_scene load_steps=11 format=4 uid="uid://c1b1eniuvpjvf"]
 
 [ext_resource type="PackedScene" uid="uid://bekehixaqa4l4" path="res://assets/models/items/rock/rock_1.glb" id="1_hu5q6"]
 [ext_resource type="Script" uid="uid://mhej8ikdcs06" path="res://scripts/items/pickable.gd" id="1_qorsb"]
+[ext_resource type="Material" uid="uid://cx5g1rfh3ysbs" path="res://resources/outline.tres" id="3_c25l8"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_s8ioe"]
 _surfaces = [{
@@ -54,7 +55,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s8ioe"]
 size = Vector3(0.3, 0.2, 0.4)
 
-[node name="RockPickable" type="CharacterBody3D" node_paths=PackedStringArray("outline")]
+[node name="RockPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_qorsb")
@@ -68,18 +69,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="blockbench_export/Node/piedra/Outline"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875, -0.125, 0)
+material_override = ExtResource("3_c25l8")
 mesh = SubResource("ArrayMesh_s8ioe")
 skeleton = NodePath("../../piedra01")
 surface_material_override/0 = SubResource("StandardMaterial3D_s8ioe")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="blockbench_export/Node/piedra/Outline"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.25)
+material_override = ExtResource("3_c25l8")
 mesh = SubResource("ArrayMesh_e0m7q")
 skeleton = NodePath("../../cube")
 surface_material_override/0 = SubResource("StandardMaterial3D_e0m7q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="blockbench_export/Node/piedra/Outline"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("3_c25l8")
 mesh = SubResource("ArrayMesh_03571")
 skeleton = NodePath("../../cube2")
 surface_material_override/0 = SubResource("StandardMaterial3D_03571")

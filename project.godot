@@ -25,6 +25,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://scenes/": "green",
 "res://scripts/": "yellow"
 }
 
@@ -36,7 +37,7 @@ player=""
 [gui]
 
 theme/custom="uid://3svg74ufw2gg"
-theme/custom_font="uid://cv5k81p1vm4ds"
+theme/custom_font="uid://hitojdemu64i"
 
 [input]
 

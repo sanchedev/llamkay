@@ -43,6 +43,7 @@ func reload():
 		label.hide()
 		label.text = ""
 	else:
-		texture_drag_slot.texture = Items.get_item(current_item).texture
+		var item_info = Items.get_item(current_item)
+		texture_drag_slot.texture = item_info.texture
 		label.show()
-		label.text = "x"+str(current_count)
+		label.text = str(current_count)
