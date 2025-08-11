@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb6odlr1ypoab"]
+
+[ext_resource type="Script" uid="uid://ci7n66xc5jk0a" path="res://scripts/items/in_hand.gd" id="1_yyl24"]
+[ext_resource type="PackedScene" uid="uid://5dbaqdo83emg" path="res://assets/models/items/cassava_stick/cassava_stick.glb" id="2_c4m0e"]
+
+[node name="CassavaStickInHand" type="Node3D"]
+script = ExtResource("1_yyl24")
+item = 4
+metadata/_custom_type_script = "uid://ci7n66xc5jk0a"
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_c4m0e")]
+
+[editable path="blockbench_export"]

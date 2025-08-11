@@ -4,6 +4,8 @@ enum ITEMS_LIST {
 	NONE,
 	ROCK,
 	CORN,
+	CASSAVA,
+	CASSAVA_STICK,
 }
 
 static var _items: Dictionary = {
@@ -27,6 +29,20 @@ static var _items: Dictionary = {
 		preload("res://scenes/items/corn/corn_pickable.tscn"),
 		preload("res://scenes/items/corn/corn_in_hand.tscn"),
 		8
+	),
+	ITEMS_LIST.CASSAVA: Item.new(
+		"Yuca",
+		preload("res://assets/hud/items/cassava.png"),
+		preload("res://scenes/items/cassava/cassava_pickable.tscn"),
+		preload("res://scenes/items/cassava/cassava_in_hand.tscn"),
+		4
+	),
+	ITEMS_LIST.CASSAVA_STICK: Item.new(
+		"Palo de Yuca",
+		preload("res://assets/hud/items/cassava_stick.png"),
+		preload("res://scenes/items/cassava_stick/cassava_stick_pickable.tscn"),
+		preload("res://scenes/items/cassava_stick/cassava_stick_in_hand.tscn"),
+		4
 	),
 }
 

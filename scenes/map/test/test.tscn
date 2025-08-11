@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://djt4re4nsuk43"]
+[gd_scene load_steps=16 format=3 uid="uid://djt4re4nsuk43"]
 
 [ext_resource type="PackedScene" uid="uid://bng6ikfucyp27" path="res://scenes/hud/main_hud.tscn" id="1_a8kv3"]
 [ext_resource type="PackedScene" uid="uid://c6xjbi3uh4k5q" path="res://scenes/player/player.tscn" id="1_cnhhr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1b1eniuvpjvf" path="res://scenes/items/rock/rock_pickable.tscn" id="5_fscad"]
 [ext_resource type="PackedScene" uid="uid://cs1selpefx4ry" path="res://scenes/items/corn/corn_pickable.tscn" id="8_fb26l"]
 [ext_resource type="PackedScene" uid="uid://0jk8x0uqke7y" path="res://scenes/plants/corn/corn_plant.tscn" id="9_w5o0v"]
+[ext_resource type="PackedScene" uid="uid://ddx541dak58am" path="res://scenes/plants/cassava/cassava_plant.tscn" id="10_smjbe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jpbku"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -92,3 +93,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9561, 0.0288675, -5.82318
 
 [node name="CornPlant2" parent="." instance=ExtResource("9_w5o0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.4316, 0.0288675, 1.37549)
+
+[node name="CassavaPlant" parent="." instance=ExtResource("10_smjbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.072, 0, -9.424)

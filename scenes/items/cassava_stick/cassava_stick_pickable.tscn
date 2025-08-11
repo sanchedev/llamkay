@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=4 uid="uid://dw8a7d83b63eu"]
+
+[ext_resource type="Script" uid="uid://mhej8ikdcs06" path="res://scripts/items/pickable.gd" id="1_v883i"]
+[ext_resource type="PackedScene" uid="uid://5dbaqdo83emg" path="res://assets/models/items/cassava_stick/cassava_stick.glb" id="2_lwyjh"]
+[ext_resource type="Material" uid="uid://cx5g1rfh3ysbs" path="res://resources/outline.tres" id="3_0umu8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0umu8"]
+size = Vector3(0.121094, 0.625903, 0.129883)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8fckt"]
+_surfaces = [{
+"aabb": AABB(-0.0913675, -0.0288675, -0.0913675, 0.182735, 0.682735, 0.182735),
+"attribute_data": PackedByteArray("/AB8OoH8AD7++P09gfwAPvwAfDrAvz8//vj9PcC/Pz+AfoA+gfwAPr9+vz6B/AA+gH6APsC/Pz+/fr8+wL8/P//8fj7++P09gfwAPv74/T3//H4+/AB8OoH8AD78AHw6v36/PvwAfDqAfoA+/AB8Or9+vz7++P09gH6APv74/T3AfsA+gfwAPv9+/z6B/AA+wH7APsC/Pz//fv8+wL8/P4H8AD6B/AA+//x+PoH8AD6B/AA+wL8/P//8fj7Avz8/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAgADAAEABAAGAAUABgAHAAUACAAKAAkACgALAAkADAAOAA0ADgAPAA0AEAASABEAEgATABEAFAAWABUAFgAXABUA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("5B67PdxjJz/kHrs95B67PdxjJz/kHru95B67PZB77LzkHrs95B67PZB77LzkHru95B67vdxjJz/kHru95B67vdxjJz/kHrs95B67vZB77LzkHru95B67vZB77LzkHrs95B67vdxjJz/kHru95B67PdxjJz/kHru95B67vdxjJz/kHrs95B67PdxjJz/kHrs95B67vZB77LzkHrs95B67PZB77LzkHrs95B67vZB77LzkHru95B67PZB77LzkHru95B67vdxjJz/kHrs95B67PdxjJz/kHrs95B67vZB77LzkHrs95B67PZB77LzkHrs95B67PdxjJz/kHru95B67vdxjJz/kHru95B67PZB77LzkHru95B67vZB77LzkHru9/f8AgP7//v/9/wCA/v/+//3/AID+//7//f8AgP7//v8BAP9/AID/vwEA/38AgP+/AQD/fwCA/78BAP9/AID/v/5//v8AAP6//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6/+n8BAAEA/j/6fwEAAQD+P/p/AQABAP4/+n8BAAEA/j/9f/9//f//v/1//3/9//+//X//f/3//7/9f/9//f//v/7/AAAAAP+//v8AAAAA/7/+/wAAAAD/v/7/AAAAAP+/")
+}]
+
+[node name="CassavaStickPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_v883i")
+outline = NodePath("Outline")
+item = 4
+metadata/_custom_type_script = "uid://mhej8ikdcs06"
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_lwyjh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313684, 0)
+shape = SubResource("BoxShape3D_0umu8")
+
+[node name="Outline" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Outline"]
+material_override = ExtResource("3_0umu8")
+mesh = SubResource("ArrayMesh_8fckt")
+skeleton = NodePath("../../blockbench_export/Node/cube")
+
+[editable path="blockbench_export"]

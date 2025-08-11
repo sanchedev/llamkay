@@ -62,6 +62,7 @@ size = Vector3(0.229272, 0.7, 0.237207)
 [node name="CornPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
 collision_layer = 4
 collision_mask = 6
+can_sleep = false
 script = ExtResource("1_as2au")
 outline = NodePath("blockbench_export/Outline")
 item = 2

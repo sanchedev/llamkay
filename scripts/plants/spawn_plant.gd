@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	outline.visible = selected
 	
-	if selected and Input.is_action_just_pressed("pick"):
+	if selected and Input.is_action_just_pressed("pick") and visible:
 		var nodes = markers.get_children()
 		
 		var idx = 0
