@@ -1,17 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bng6ikfucyp27"]
+[gd_scene load_steps=10 format=3 uid="uid://bng6ikfucyp27"]
 
 [ext_resource type="PackedScene" uid="uid://b6xf5b4g4yyan" path="res://scenes/hud/menus/pause_menu/pause_menu.tscn" id="1_5pyus"]
 [ext_resource type="PackedScene" uid="uid://b4vq0cl3o0746" path="res://scenes/hud/bars/health_bar/health_bar.tscn" id="3_a535s"]
 [ext_resource type="PackedScene" uid="uid://cswhyr2ikwlmv" path="res://scenes/hud/slots/hand/slot_hand.tscn" id="4_5pyus"]
 [ext_resource type="PackedScene" uid="uid://dy28q66o7x7vq" path="res://scenes/hud/bars/food_bar/food_bar.tscn" id="4_v04dn"]
 [ext_resource type="PackedScene" uid="uid://ct84e6fyue8f5" path="res://scenes/hud/buttons/pause/pause_button.tscn" id="5_5pyus"]
-[ext_resource type="PackedScene" uid="uid://be4ine6g6r3nv" path="res://scenes/hud/slots/backpack/backpack.tscn" id="6_78qht"]
+[ext_resource type="PackedScene" uid="uid://be4ine6g6r3nv" path="res://scenes/hud/buttons/backpack/backpack.tscn" id="6_78qht"]
 [ext_resource type="Script" uid="uid://slyjo7uskwes" path="res://scenes/hud/control_menu.gd" id="7_2c048"]
+[ext_resource type="PackedScene" uid="uid://bcya0j7y65qxm" path="res://scenes/hud/buttons/building_mode/building_mode_button.tscn" id="7_urdkw"]
 [ext_resource type="Texture2D" uid="uid://bbtmv8v7s12rf" path="res://assets/hud/pointer/pointer.png" id="8_aouoc"]
 
 [node name="MainHud" type="CanvasLayer"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." groups=["screen"]]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -30,9 +31,9 @@ pause_btn = NodePath("../PauseButton")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
+offset_left = 32.0
 offset_top = -96.0
-offset_right = 416.0
+offset_right = 352.0
 offset_bottom = -32.0
 grow_vertical = 0
 
@@ -66,6 +67,19 @@ offset_left = -352.0
 offset_top = -160.0
 offset_right = -224.0
 offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BuildingModeButton" parent="." instance=ExtResource("7_urdkw")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -352.0
+offset_right = -32.0
+offset_bottom = -224.0
 grow_horizontal = 0
 grow_vertical = 0
 

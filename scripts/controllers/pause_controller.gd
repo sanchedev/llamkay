@@ -21,11 +21,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if change == "pause":
 		get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if not DisplayServer.is_touchscreen_available():
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		change_pause_state.emit(true)
 	elif change == "resume":
 		get_tree().paused = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if not DisplayServer.is_touchscreen_available():
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		change_pause_state.emit(false)
 	
 	if change != "":

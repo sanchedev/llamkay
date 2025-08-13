@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://be4ine6g6r3nv"]
+
+[ext_resource type="Texture2D" uid="uid://578gq0xloqfo" path="res://assets/hud/slots/backpack/backpack.png" id="1_ur885"]
+[ext_resource type="PackedScene" uid="uid://coa16ca4qtpoc" path="res://scenes/hud/key/key.tscn" id="2_gnibj"]
+[ext_resource type="Script" uid="uid://bkcp4cqfu6r5m" path="res://scenes/hud/buttons/backpack/backpack.gd" id="2_j0414"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64ur2"]
+
+[node name="Backpack" type="PanelContainer"]
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_64ur2")
+script = ExtResource("2_j0414")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("1_ur885")
+action = "inventory"
+
+[node name="Key" parent="." instance=ExtResource("2_gnibj")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label = "I"

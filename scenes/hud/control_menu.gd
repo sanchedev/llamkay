@@ -1,11 +1,11 @@
 class_name MenuControl extends Control
 
-const INVENTORY = preload("res://scenes/hud/slots/inventory/inventory.tscn")
-
 var current: String = ""
 
-func _process(delta: float) -> void:
-	if current == "":
-		if Input.is_action_just_pressed("inventory"):
-			var inv = INVENTORY.instantiate()
-			inv.enter(self)
+func ask_for_screen(key: String, screen: PackedScene):
+	if current != "": return false
+	if get_child_count() > 0: return
+	
+	var scr = screen.instantiate()
+	scr.enter(self)
+	current = key

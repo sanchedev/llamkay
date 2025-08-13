@@ -1,13 +1,13 @@
 class_name Player
 extends CharacterBody3D
 
-@export var speed = 4
+@export var speed = 3
 @export var run_speed = 7
 @export var mouse_sensitivity = 0.004
 
 @onready var camera = $Camera3D
 @onready var ray_cast_3d: RayCast3D = $Camera3D/RayCast3D
-@onready var player_item_slot: PlayerItemSlot = $ItemSlot
+@onready var player_item_slot: PlayerItemSlot = $Camera3D/ItemSlot
 
 
 signal interact_object(collider)
@@ -46,6 +46,10 @@ func _physics_process(delta: float) -> void:
 			HealthController.use_food_to_run(delta)
 		else:
 			HealthController.use_food_to_walk(delta)
+		$Camera3D/AnimationPlayer.play("camera_shaking")
+		$Camera3D/AnimationPlayer.speed_scale = 1 if not is_running else 2
+	else:
+		$Camera3D/AnimationPlayer.speed_scale = 5
 	
 	move_and_slide()
 
@@ -79,7 +83,7 @@ func _input(event: InputEvent) -> void:
 		camera.rotation.x -= event.relative.y * mouse_sensitivity
 		rotation.y -= event.relative.x * mouse_sensitivity
 		
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	
 	if event.is_action_pressed("drop") and get_hand_item().item != Items.ITEMS_LIST.NONE:
 		drop_item()

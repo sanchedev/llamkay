@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcya0j7y65qxm"]
+
+[ext_resource type="Texture2D" uid="uid://cyecoy4hnggd0" path="res://assets/hud/buttons/building_mode/normal.png" id="1_h62rp"]
+[ext_resource type="Script" uid="uid://bijp3tpi55hpw" path="res://scenes/hud/buttons/building_mode/building_mode_button.gd" id="2_rhfu4"]
+[ext_resource type="PackedScene" uid="uid://coa16ca4qtpoc" path="res://scenes/hud/key/key.tscn" id="3_rhfu4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxj6h"]
+
+[node name="BuildingModeButton" type="PanelContainer"]
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gxj6h")
+script = ExtResource("2_rhfu4")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("1_h62rp")
+action = "building_mode"
+
+[node name="Key" parent="." instance=ExtResource("3_rhfu4")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label = "C"

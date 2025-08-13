@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cie4u20dkgucc"]
+
+[ext_resource type="Script" uid="uid://c3y0x6xbrltit" path="res://scenes/hud/splash_texts/press_key/press_e_to.gd" id="1_jvqhm"]
+
+[node name="PressETo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvqhm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 52.0
+offset_right = 174.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]Presiona [b]E[/b] para"
+fit_content = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -192.0
+offset_right = 16.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

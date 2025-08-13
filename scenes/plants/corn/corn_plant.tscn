@@ -1,11 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://0jk8x0uqke7y"]
+[gd_scene load_steps=7 format=3 uid="uid://0jk8x0uqke7y"]
 
 [ext_resource type="Script" uid="uid://wgncbud4ng3e" path="res://scripts/plants/plant.gd" id="1_gscfp"]
+[ext_resource type="PackedScene" uid="uid://dxybdr3gopw4p" path="res://assets/models/plants/corn/corn_phase_1.glb" id="2_qv06h"]
+[ext_resource type="PackedScene" uid="uid://dwxb7nh0lh02x" path="res://assets/models/plants/corn/corn_phase_2.glb" id="3_p0hxp"]
 [ext_resource type="PackedScene" uid="uid://3nt7guu52n1a" path="res://scenes/plants/corn/phase_3.tscn" id="3_qv06h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jd0bm"]
+size = Vector3(0.1, 0.9, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qv06h"]
+size = Vector3(0.1, 2.7, 0.1)
 
 [node name="CornPlant" type="Node3D"]
 script = ExtResource("1_gscfp")
-phases_durantion_in_sec = Array[int]([60])
+phases_durantion_in_sec = Array[int]([10, 10, 50])
+
+[node name="Phase1" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="blockbench_export" parent="Phase1" instance=ExtResource("2_qv06h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Phase1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 2.98023e-08)
+shape = SubResource("BoxShape3D_jd0bm")
+
+[node name="Phase2" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="blockbench_export2" parent="Phase2" instance=ExtResource("3_p0hxp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Phase2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
+shape = SubResource("BoxShape3D_qv06h")
 
 [node name="Phase3" parent="." node_paths=PackedStringArray("complete_plant") instance=ExtResource("3_qv06h")]
 complete_plant = NodePath("..")

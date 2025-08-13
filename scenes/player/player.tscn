@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6xjbi3uh4k5q"]
+[gd_scene load_steps=8 format=3 uid="uid://c6xjbi3uh4k5q"]
 
 [ext_resource type="Script" uid="uid://7sfw1sfi1y4c" path="res://scenes/player/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cj01iab408kug" path="res://scenes/player/player_item_slot.gd" id="2_dovo2"]
@@ -10,6 +10,42 @@ height = 1.65
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
 radius = 0.4
 height = 1.65
+
+[sub_resource type="Animation" id="Animation_dovo2"]
+resource_name = "camera_shaking"
+length = 0.5
+step = 0.125
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 0, 0),
+"points": PackedFloat32Array(0.5, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0.5, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_gmlin"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvxji"]
+_data = {
+&"RESET": SubResource("Animation_gmlin"),
+&"camera_shaking": SubResource("Animation_dovo2")
+}
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_mask = 250
@@ -31,7 +67,12 @@ target_position = Vector3(0, 0, -5)
 collision_mask = 4
 collide_with_areas = true
 
-[node name="ItemSlot" type="Marker3D" parent="."]
+[node name="ItemSlot" type="Marker3D" parent="Camera3D"]
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71, 0, -1.137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71, -0.5, -0.937)
 script = ExtResource("2_dovo2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_lvxji")
+}
