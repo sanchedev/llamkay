@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhvr00gn2xs0u"]
+
+[ext_resource type="Script" uid="uid://ci7n66xc5jk0a" path="res://scripts/items/in_hand.gd" id="1_ffiwj"]
+[ext_resource type="PackedScene" uid="uid://cna0lr3yik8fs" path="res://assets/models/items/potato/potato.glb" id="2_6i616"]
+
+[node name="PotatoInHand" type="Node3D"]
+script = ExtResource("1_ffiwj")
+item = 5
+metadata/_custom_type_script = "uid://ci7n66xc5jk0a"
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_6i616")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.0738562, -0.277035, 0.0855406)
+
+[editable path="blockbench_export"]

@@ -6,6 +6,7 @@ enum ITEMS_LIST {
 	CORN,
 	CASSAVA,
 	CASSAVA_STICK,
+	POTATO,
 }
 
 static var _items: Dictionary = {
@@ -44,6 +45,13 @@ static var _items: Dictionary = {
 		preload("res://scenes/items/cassava_stick/cassava_stick_in_hand.tscn"),
 		6
 	),
+	ITEMS_LIST.POTATO: Item.new(
+		"Papa",
+		preload("res://assets/hud/items/cassava.png"),
+		preload("res://scenes/items/potato/potato_pickable.tscn"),
+		preload("res://scenes/items/potato/potato_in_hand.tscn"),
+		6
+	)
 }
 
 static func get_item(item: ITEMS_LIST) -> Item:

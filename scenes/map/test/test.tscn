@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://djt4re4nsuk43"]
+[gd_scene load_steps=21 format=3 uid="uid://djt4re4nsuk43"]
 
 [ext_resource type="PackedScene" uid="uid://bng6ikfucyp27" path="res://scenes/hud/main_hud.tscn" id="1_a8kv3"]
 [ext_resource type="PackedScene" uid="uid://c6xjbi3uh4k5q" path="res://scenes/player/player.tscn" id="1_cnhhr"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5oedrpa0a8b" path="res://scenes/building_mode/building_site/building_site.tscn" id="11_c1kek"]
 [ext_resource type="PackedScene" uid="uid://cvxvunrd04dsy" path="res://scenes/structures/basic_planting_land/basic_planting_land.tscn" id="12_4ge7b"]
 [ext_resource type="PackedScene" uid="uid://dw8a7d83b63eu" path="res://scenes/items/cassava_stick/cassava_stick_pickable.tscn" id="13_4fh0t"]
+[ext_resource type="PackedScene" uid="uid://dlily6omfme7n" path="res://scenes/items/potato/potato_pickable.tscn" id="14_h7jvt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_smjbe"]
 sky_top_color = Color(0.525, 0.61875, 0.75, 1)
@@ -163,3 +164,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4994, 0.0288665, -4.67019
 
 [node name="CassavaStickPickable5" parent="." instance=ExtResource("13_4fh0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9422, 0.0288665, -4.67019)
+
+[node name="PotatoPickable" parent="." instance=ExtResource("14_h7jvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6568, 0.494811, 8.20284)
