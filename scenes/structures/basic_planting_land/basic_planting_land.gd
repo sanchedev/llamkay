@@ -27,6 +27,7 @@ func check_player_with_item() -> bool:
 	if not (player is Player): return false
 	var item: InventorySlotRes = player.get_hand_item()
 	if not allowed_item.has(item.item) or item.count < 5: return false
+	if markers.get_children().any(func(marker): return marker.get_child_count() > 0): return false
 	return true
 
 
