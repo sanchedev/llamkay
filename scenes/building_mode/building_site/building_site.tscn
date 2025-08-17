@@ -48,7 +48,7 @@ shape = SubResource("SphereShape3D_f5ylt")
 
 [node name="PressETo" parent="CanvasLayer" instance=ExtResource("3_8kapk")]
 visible = false
-text = "Elegir que construir"
+text = "PRESS_E_TO.CHOOSE"
 
 [node name="Items" type="Node3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 2, 0)

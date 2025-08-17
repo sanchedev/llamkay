@@ -148,8 +148,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.072, 0, -9.424)
 [node name="BasicPlantingLand" parent="." instance=ExtResource("12_4ge7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2489, 0, 0.634403)
 
-[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]
-
 [node name="CassavaStickPickable" parent="." instance=ExtResource("13_4fh0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9856, 0.0288665, -4.67019)
 
@@ -167,3 +165,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9422, 0.0288665, -4.67019
 
 [node name="PotatoPickable" parent="." instance=ExtResource("14_h7jvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6568, 0.494811, 8.20284)
+
+[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]

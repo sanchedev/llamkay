@@ -45,8 +45,8 @@ func _on_structure_selected(structure: Structures.STRUCTURES_LIST):
 	current_structure = structure
 	var structure_obj: Structure = Structures.get_structure(structure)
 	info_panel.show()
-	info_panel_title.text = structure_obj.name
-	info_panel_desc.text = structure_obj.description
+	info_panel_title.text = tr(structure_obj.name)
+	info_panel_desc.text = tr(structure_obj.description)
 	info_panel_button.disabled = current_structure == building_site.current_structure
 	
 	for node in info_panel_items.get_children():

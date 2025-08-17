@@ -38,7 +38,7 @@ shape = SubResource("SphereShape3D_r8mnq")
 [node name="CanvasLayer" type="CanvasLayer" parent="Area3D"]
 
 [node name="PressETo" parent="Area3D/CanvasLayer" instance=ExtResource("3_vowl2")]
-text = "Plantar"
+text = "PRESS_E_TO.PLANT"
 
 [node name="Markers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)

@@ -9,8 +9,8 @@ signal asked_for_action()
 
 func _set_text(value: String):
 	text = value
-	$RichTextLabel.text = "[center]Presiona [b]E[/b] para\n" + value.to_lower()
-	$Button.text = value
+	$RichTextLabel.text = "[center]" + tr("PRESS_") + " [b]" + "E" + "[/b] " + tr("_TO") + "\n" + tr(value).to_lower()
+	$Button.text = tr(value)
 
 func _ready() -> void:
 	_set_text(text)

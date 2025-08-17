@@ -99,6 +99,10 @@ action={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/translations/translations.es.translation")
+
 [layer_names]
 
 3d_physics/layer_1="Player"

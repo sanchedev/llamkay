@@ -84,7 +84,7 @@ theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "ConsTruye"
+text = "CHOOSE_STRUCTURE.TITLE"
 label_settings = SubResource("LabelSettings_y1752")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -100,12 +100,6 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
 layout_mode = 2
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.243137, 0.121569, 0.0392157, 1)
-theme_override_font_sizes/font_size = 24
-text = "Siembra"
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -174,7 +168,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Seleccionar"
+text = "CHOOSE_STRUCTURE.SUBMIT_BTN.SELECT"
 
 [node name="CloseButton" type="TextureButton" parent="."]
 layout_mode = 1

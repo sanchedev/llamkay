@@ -23,11 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_2c048")
 
-[node name="PauseMenu" parent="." node_paths=PackedStringArray("pause_btn") instance=ExtResource("1_5pyus")]
-visible = false
-z_index = 2
-pause_btn = NodePath("../PauseButton")
-
 [node name="FoodProgressBar" parent="." instance=ExtResource("4_v04dn")]
 anchors_preset = 2
 anchor_top = 1.0
@@ -110,3 +105,8 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_aouoc")
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("pause_btn") instance=ExtResource("1_5pyus")]
+visible = false
+z_index = 2
+pause_btn = NodePath("../PauseButton")
