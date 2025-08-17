@@ -42,7 +42,7 @@ static var _items: Dictionary = {
 		preload("res://assets/hud/items/cassava_stick.png"),
 		preload("res://scenes/items/cassava_stick/cassava_stick_pickable.tscn"),
 		preload("res://scenes/items/cassava_stick/cassava_stick_in_hand.tscn"),
-		4
+		6
 	),
 }
 

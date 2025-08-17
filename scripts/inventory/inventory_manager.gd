@@ -24,6 +24,9 @@ static func get_item_at(idx: int) -> InventorySlotRes:
 static func set_item_at(idx: int, item: Items.ITEMS_LIST, count: int) -> void:
 	var old_item = InventoryManager.instance.all_items[idx].item
 	var old_count = InventoryManager.instance.all_items[idx].count
-	InventoryManager.instance.all_items[idx].item = item
-	InventoryManager.instance.all_items[idx].count = count
+	var new_item = item if count > 0 else Items.ITEMS_LIST.NONE
+	var new_count = count if count > 0 else 0
+	
+	InventoryManager.instance.all_items[idx].item = new_item
+	InventoryManager.instance.all_items[idx].count = new_count
 	InventoryManager.instance.slot_changed.emit(idx, get_item_at(idx), old_item, old_count)

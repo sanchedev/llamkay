@@ -1,0 +1,1 @@
+class_name StructureNode extends StaticBody3D

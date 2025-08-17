@@ -22,7 +22,7 @@ points = PackedVector3Array(-0.297825, 0.0603971, -0.0647051, 0.117387, 0.215831
 
 [node name="CassavaPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 254
 script = ExtResource("1_h6ism")
 outline = NodePath("Outline")
 item = 3

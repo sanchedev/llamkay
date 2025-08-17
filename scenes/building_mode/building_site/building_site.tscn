@@ -50,6 +50,20 @@ shape = SubResource("SphereShape3D_f5ylt")
 visible = false
 text = "Elegir que construir"
 
+[node name="Items" type="Node3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 2, 0)
+
+[node name="Rotator" type="Node3D" parent="Items"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ItemsDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemsDetector"]
+shape = SubResource("SphereShape3D_f5ylt")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="asked_for_action" from="CanvasLayer/PressETo" to="." method="_on_press_e_to_asked_for_action"]
+[connection signal="body_entered" from="ItemsDetector" to="." method="_on_items_detector_body_entered"]

@@ -1,5 +1,3 @@
-@tool
-
 extends Control
 
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
@@ -15,6 +13,7 @@ func _set_text(value: String):
 	$Button.text = value
 
 func _ready() -> void:
+	_set_text(text)
 	if DisplayServer.is_touchscreen_available():
 		button.visible = true
 		rich_text_label.visible = false

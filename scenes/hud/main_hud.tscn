@@ -13,6 +13,7 @@
 [node name="MainHud" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="." groups=["screen"]]
+process_mode = 3
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -24,7 +25,7 @@ script = ExtResource("7_2c048")
 
 [node name="PauseMenu" parent="." node_paths=PackedStringArray("pause_btn") instance=ExtResource("1_5pyus")]
 visible = false
-z_index = 1
+z_index = 2
 pause_btn = NodePath("../PauseButton")
 
 [node name="FoodProgressBar" parent="." instance=ExtResource("4_v04dn")]

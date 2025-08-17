@@ -22,7 +22,7 @@ _surfaces = [{
 
 [node name="CassavaStickPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 254
 script = ExtResource("1_v883i")
 outline = NodePath("Outline")
 item = 4

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b32dw5k0vxp15"]
+
+[ext_resource type="Material" uid="uid://dkwg6kf1anuey" path="res://scenes/building_mode/building_site/building_site_material_3d.tres" id="1_2lwba"]
+[ext_resource type="Script" uid="uid://bmakkhdx1p7pv" path="res://scenes/building_mode/building_site/bs_item_preview.gd" id="2_m0e21"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m0e21"]
+material = ExtResource("1_2lwba")
+size = Vector2(1, 1)
+
+[node name="BSItemPreview" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_m0e21")
+skeleton = NodePath("../..")
+script = ExtResource("2_m0e21")

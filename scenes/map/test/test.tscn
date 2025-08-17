@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://djt4re4nsuk43"]
+[gd_scene load_steps=20 format=3 uid="uid://djt4re4nsuk43"]
 
 [ext_resource type="PackedScene" uid="uid://bng6ikfucyp27" path="res://scenes/hud/main_hud.tscn" id="1_a8kv3"]
 [ext_resource type="PackedScene" uid="uid://c6xjbi3uh4k5q" path="res://scenes/player/player.tscn" id="1_cnhhr"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://0jk8x0uqke7y" path="res://scenes/plants/corn/corn_plant.tscn" id="9_w5o0v"]
 [ext_resource type="PackedScene" uid="uid://ddx541dak58am" path="res://scenes/plants/cassava/cassava_plant.tscn" id="10_smjbe"]
 [ext_resource type="PackedScene" uid="uid://bv5oedrpa0a8b" path="res://scenes/building_mode/building_site/building_site.tscn" id="11_c1kek"]
+[ext_resource type="PackedScene" uid="uid://cvxvunrd04dsy" path="res://scenes/structures/basic_planting_land/basic_planting_land.tscn" id="12_4ge7b"]
+[ext_resource type="PackedScene" uid="uid://dw8a7d83b63eu" path="res://scenes/items/cassava_stick/cassava_stick_pickable.tscn" id="13_4fh0t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_smjbe"]
 sky_top_color = Color(0.525, 0.61875, 0.75, 1)
@@ -57,7 +59,11 @@ process_mode = 3
 script = ExtResource("4_pi2b7")
 metadata/_custom_type_script = "uid://dus3k2856uydc"
 
-[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]
+[node name="BuildingSite" parent="." instance=ExtResource("11_c1kek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.5532, 0, 68.5657)
+
+[node name="BuildingSite2" parent="." instance=ExtResource("11_c1kek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3044, 1.52588e-05, 11.7039)
 
 [node name="Player" parent="." instance=ExtResource("1_cnhhr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.328, 8.28149, -4.23337)
@@ -90,8 +96,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.703, 4.72571, -24.1559)
 [node name="Rock5" parent="." instance=ExtResource("5_fscad")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.703, 4.72571, -11.2475)
 
+[node name="Rock6" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.703, 4.72571, -6.07283)
+
+[node name="Rock7" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1733, 4.72571, -6.07283)
+
+[node name="Rock8" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1733, 4.72571, -2.14299)
+
+[node name="Rock9" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5825, 4.72571, -2.14299)
+
+[node name="Rock10" parent="." instance=ExtResource("5_fscad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1942, 4.72571, -2.14299)
+
 [node name="CornPickable" parent="." instance=ExtResource("8_fb26l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.7072, 1.9, -0.707813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.927, 1.9, 2.13106)
+
+[node name="CornPickable3" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7102, 1.9, 2.13106)
+
+[node name="CornPickable4" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7102, 1.9, 2.13106)
+
+[node name="CornPickable5" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9171, 1.9, 2.13106)
+
+[node name="CornPickable6" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.232, 1.9, 2.13106)
+
+[node name="CornPickable7" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.4841, 1.9, 2.13106)
+
+[node name="CornPickable8" parent="." instance=ExtResource("8_fb26l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7343, 1.9, 2.13106)
 
 [node name="CornPickable2" parent="." instance=ExtResource("8_fb26l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2214, 1.90001, 31.091)
@@ -105,8 +144,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.4316, 0.0288675, 1.37549)
 [node name="CassavaPlant" parent="." instance=ExtResource("10_smjbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.072, 0, -9.424)
 
-[node name="BuildingSite" parent="." instance=ExtResource("11_c1kek")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.5532, 0, 68.5657)
+[node name="BasicPlantingLand" parent="." instance=ExtResource("12_4ge7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2489, 0, 0.634403)
 
-[node name="BuildingSite2" parent="." instance=ExtResource("11_c1kek")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1372, 3.05176e-05, 68.6669)
+[node name="MainHud" parent="." instance=ExtResource("1_a8kv3")]
+
+[node name="CassavaStickPickable" parent="." instance=ExtResource("13_4fh0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9856, 0.0288665, -4.67019)
+
+[node name="CassavaStickPickable2" parent="." instance=ExtResource("13_4fh0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.726, 0.0288665, -4.67019)
+
+[node name="CassavaStickPickable3" parent="." instance=ExtResource("13_4fh0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.635, 0.0288665, -4.67019)
+
+[node name="CassavaStickPickable4" parent="." instance=ExtResource("13_4fh0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4994, 0.0288665, -4.67019)
+
+[node name="CassavaStickPickable5" parent="." instance=ExtResource("13_4fh0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9422, 0.0288665, -4.67019)

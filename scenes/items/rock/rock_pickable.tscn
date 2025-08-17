@@ -57,7 +57,7 @@ size = Vector3(0.3, 0.2, 0.4)
 
 [node name="RockPickable" type="RigidBody3D" node_paths=PackedStringArray("outline")]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 254
 can_sleep = false
 script = ExtResource("1_qorsb")
 outline = NodePath("blockbench_export/Node/piedra/Outline")

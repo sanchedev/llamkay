@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvxvunrd04dsy"]
+
+[ext_resource type="Script" uid="uid://cw3i1lgof6vbs" path="res://scenes/structures/basic_planting_land/basic_planting_land.gd" id="1_8chw2"]
+[ext_resource type="PackedScene" uid="uid://c0x0qgfn08i45" path="res://assets/models/structures/basic_planting_land/basic_planting_land.glb" id="1_hc6y2"]
+[ext_resource type="PackedScene" uid="uid://cie4u20dkgucc" path="res://scenes/hud/splash_texts/press_key/press_e_to.tscn" id="3_vowl2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hc6y2"]
+size = Vector3(6.4, 0.1, 6.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vowl2"]
+size = Vector3(6, 0.1, 6)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r8mnq"]
+radius = 3.1
+
+[node name="BasicPlantingLand" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_8chw2")
+allowed_item = Array[int]([2, 4])
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_hc6y2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0426068, 0)
+shape = SubResource("BoxShape3D_hc6y2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142607, 0)
+shape = SubResource("BoxShape3D_vowl2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_r8mnq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area3D"]
+
+[node name="PressETo" parent="Area3D/CanvasLayer" instance=ExtResource("3_vowl2")]
+text = "Plantar"
+
+[node name="Markers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.1, 1)
+
+[node name="Marker3D2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.1, -2)
+
+[node name="Marker3D3" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.1, 2)
+
+[node name="Marker3D4" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.1, -1)
+
+[node name="Marker3D5" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 1)
+
+[node name="Marker3D6" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -2)
+
+[node name="Marker3D7" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 1.9)
+
+[node name="Marker3D8" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, -1.1)
+
+[node name="Marker3D9" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0.1, 1)
+
+[node name="Marker3D10" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0.1, -2)
+
+[connection signal="asked_for_action" from="Area3D/CanvasLayer/PressETo" to="." method="_on_press_e_to_asked_for_action"]

@@ -10,7 +10,7 @@ func enter(parent: MenuControl):
 ## Not use this out the self
 func exit():
 	_exit()
-	parent_node.remove_child(self)
+	queue_free()
 	PauseController.instance.resume()
 	parent_node.current = ""
 
