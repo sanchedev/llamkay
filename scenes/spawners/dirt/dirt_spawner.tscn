@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd5jqkacx81a2"]
+
+[ext_resource type="Script" uid="uid://c6ffju5nb3cm6" path="res://scenes/spawners/dirt/dirt_spawner.gd" id="1_84qsh"]
+[ext_resource type="PackedScene" uid="uid://cgoqdicmuvy7q" path="res://assets/models/spawners/dirt/dirt.glb" id="1_c5tpf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84qsh"]
+size = Vector3(1, 0.1, 0.9)
+
+[node name="DirtSpawner" type="StaticBody3D"]
+script = ExtResource("1_84qsh")
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_c5tpf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.00121941, 0.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.05, 0)
+shape = SubResource("BoxShape3D_84qsh")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0945073, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="child_exiting_tree" from="Marker3D" to="." method="_on_marker_3d_child_exiting_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
